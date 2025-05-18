@@ -12,6 +12,7 @@ import {
 	Tr,
 	useTheme,
 } from "@chakra-ui/react";
+import instance from "../services/api.service";
 
 interface LeaderboardUser {
 	username: string;
@@ -30,8 +31,8 @@ function Leaderboard() {
 		useTheme()["components"]["Link"]["baseStyle"]["color"].split(".")[0];
 
 	useEffect(() => {
-		axios
-			.get("/api/user/leaderboard")
+		instance
+			.get("/user/leaderboard")
 			.then((res) => {
 				setLeaderboard(res.data.users);
 			})

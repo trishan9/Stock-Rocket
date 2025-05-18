@@ -2,9 +2,9 @@ import React, { useState, useRef, useEffect } from "react";
 import * as Highcharts from "highcharts/highstock";
 import highchartsAccessibility from "highcharts/modules/accessibility";
 import HighchartsReact from "highcharts-react-official";
-import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { Box, Spinner, useTheme } from "@chakra-ui/react";
+import instance from "../services/api.service";
 // import { useColorMode } from "@chakra-ui/react";
 
 const formatter = new Intl.NumberFormat("en-US", {
@@ -137,8 +137,8 @@ export default function StockChart(props: { symbol: string }) {
 
 	const fetchStockData = (period: string = "1m") => {
 		setIsLoading(true);
-		axios
-			.get(`/api/stocks/${props.symbol}/historical?period=` + period)
+		instance
+			.get(`/stocks/${props.symbol}/historical?period=` + period)
 			.then((res) => {
 				// if (chartComponentRef !== null) {
 				// chartComponentRef.current!.chart!.series[0]!.setData(res.data);

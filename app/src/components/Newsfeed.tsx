@@ -15,6 +15,7 @@ import {
 	HStack,
 } from "@chakra-ui/react";
 import axios from "axios";
+import instance from "../services/api.service";
 
 interface NewsItem {
 	title: string;
@@ -55,7 +56,7 @@ function Newsfeed(props: { symbol: string }) {
 		useTheme()["components"]["Link"]["baseStyle"]["color"].split(".")[0];
 
 	useEffect(() => {
-		axios.get("/api/news/" + (props.symbol || "")).then((res) => {
+		instance.get("/news/" + (props.symbol || "")).then((res) => {
 			setNews(res.data.slice(0, 9));
 			setIsLoading(false);
 		});

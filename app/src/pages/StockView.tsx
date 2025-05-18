@@ -10,7 +10,6 @@ import {
 	Spinner,
 	HStack,
 } from "@chakra-ui/react";
-import axios from "axios";
 import StockChart from "../components/StockChart";
 import TransactionPane from "../components/TransactionPane";
 import accounts from "../services/accounts.service";
@@ -22,6 +21,7 @@ import {
 	ArrowUpIcon,
 	MinusIcon,
 } from "@chakra-ui/icons";
+import instance from "../services/api.service";
 
 const formatter = new Intl.NumberFormat("en-US", {
 	style: "currency",
@@ -52,8 +52,8 @@ function StockView() {
 			});
 		}
 
-		axios
-			.get(`/api/stocks/${symbol}/info`)
+		instance
+			.get(`/stocks/${symbol}/info`)
 			.then((res) => {
 				setStock({ ...res.data });
 			})
