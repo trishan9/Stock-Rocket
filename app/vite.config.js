@@ -8,8 +8,8 @@ export default defineConfig({
 		host: "0.0.0.0",
 		proxy: {
 			"/api": {
-				target: "http://0.0.0.0:3010",
-				changeOrigin: false,
+				target: "https://stock-rocket-si81.onrender.com",
+				changeOrigin: true,
 				secure: false,
 				ws: true,
 			},

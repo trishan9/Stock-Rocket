@@ -65,7 +65,7 @@ function App() {
 			<Box textAlign="center" py="10">
 				<Text fontSize="sm" color="gray.500">
 					Built by{" "}
-					<Link href="https://spike.codes" fontWeight="bold">
+					<Link href="#" fontWeight="bold">
 						{import.meta.env.VITE_APP_AUTHOR}
 					</Link>{" "}
 				</Text>
