@@ -1,10 +1,6 @@
 <div align="center">
 
 <h1 align="center">StockRocket</h3>
-
-<p align="center">
-    Multiplayer stock trading simulator built with React + MERN 📈
-  </p>
 </div>
 
 StockRocket is a multiplayer stock trading simulator that lets users practice trading stocks, currencies, and cryptocurrencies using virtual money in real-time. Designed for beginners and students, the app uses real-time live US market data to simulate realistic trading scenarios. Users can manage portfolios, track performance, and compete in timed competitions via a secure, responsive platform. Features include user dashboards, leaderboards,—all aimed at making trading education fun, safe, and engaging!
